@@ -22,22 +22,3 @@ add_theme_support('woocommerce');
  */
 add_image_size('icon', 64, 64);
 add_image_size('small', 160, 160);
-
-/**
- * Add support for custom <li> classes in wp_nav_menu()
- */
-function nav_menu_item_class($classes, $item, $args) {
-  if (isset($args->item_class)) { $classes[] = $args->item_class; }
-  return $classes;
-}
-add_filter('nav_menu_css_class', 'nav_menu_item_class', 1, 3);
-
-
-/**
- * Add support for custom <a> classes in wp_nav_menu()
- */
-function nav_menu_anchor_class($classes, $item, $args) {
-  if (isset($args->anchor_class)) { $classes['class'] = $args->anchor_class; }
-  return $classes;
-}
-add_filter('nav_menu_link_attributes', 'nav_menu_anchor_class', 1, 3);

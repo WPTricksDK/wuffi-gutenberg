@@ -7,8 +7,7 @@
 /*add_filter('allowed_block_types', function($block_types, $post) {
 
     $allowed_blocks = [
-      'core/paragraph',
-      'core/buttons',
+      'wuffi/heroblock'
     ];
 
     if($post->post_type == 'page') {
@@ -30,7 +29,7 @@ function wuffi_unregister_pattern_categories() {
     unregister_block_pattern_category('query');
     unregister_block_pattern_category('featured');
 }
-add_action('init', 'wuffi_unregister_pattern_categories');
+//add_action('init', 'wuffi_unregister_pattern_categories');
 
 /**
  * Register pattern category
@@ -43,4 +42,4 @@ function wuffi_register_pattern_category() {
        );
     }
 }
-add_action('init', 'wuffi_register_pattern_category');
+//add_action('init', 'wuffi_register_pattern_category');

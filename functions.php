@@ -43,7 +43,7 @@ if (file_exists(THEME_PATH.'/vendor')) {
 /**
  * Automatically load files
  */
-$autoload = ['/includes/*/*.php', '/blocks/*.php', '/patterns/*.php'];
+$autoload = ['/includes/*.php', '/blocks/*.php', '/patterns/*.php'];
 foreach ($autoload as $path) {
 
   $relative = THEME_PATH.$path;
@@ -61,6 +61,7 @@ foreach ($autoload as $path) {
  */
 function include_scripts() {
   wp_enqueue_style('app', get_template_directory_uri().'/public/app.css', [], THEME_VERSION);
+  wp_enqueue_script('app', get_template_directory_uri().'/public/gutenberg.js', [], THEME_VERSION, true);
   wp_enqueue_script('app', get_template_directory_uri().'/public/app.js', [], THEME_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'include_scripts');
